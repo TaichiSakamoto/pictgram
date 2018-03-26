@@ -6,12 +6,12 @@ class FavoritesController < ApplicationController
     if favorite.save
       redirect_to topics_path, notice: 'お気に入りに登録しました'
     else
-      redirect_to topics_path, notice: 'お気に入りに登録に失敗しました'
+      redirect_to topics_path, alert: 'お気に入りに登録に失敗しました'
     end
   end
 
   def index
   @favorite_topics = current_user.favorite_topics
   end
-  
+
 end
